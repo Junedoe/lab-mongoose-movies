@@ -5,5 +5,12 @@
     <a href="/celebrities/{{this._id}}">
         <li>{{this.name}}</li>
     </a>
+    <form action="/celebrities/{{this._id}}/delete" method="post">
+        <button>delete</button>
+    </form>
+    {{!--
+    <form action="celebrities/:id/delete" method="post">
+        <button type="submit">edit</button>
+    </form> --}}
     <br> {{/each}}
 </ul>

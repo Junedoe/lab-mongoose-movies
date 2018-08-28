@@ -29,6 +29,12 @@ router.post('/celebrities', (req, res) => {
     });
 });
 
+router.post('/celebrities/:id/delete', (req, res, next) => {
+    CelebModel.findByIdAndRemove(req.params.id).then(x => {
+        res.redirect('back');
+    });
+});
+
 router.get('/celebrities/:id', (req, res, next) => {
     CelebModel.findById(req.params.id).then(celebrityFromDb => {
         res.render('celebrities/show', celebrityFromDb);
